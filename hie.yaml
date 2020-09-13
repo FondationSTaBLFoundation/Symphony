@@ -1,0 +1,13 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "Symphony:lib"
+
+    - path: "./app/Main.hs"
+      component: "Symphony:exe:Symphony-exe"
+
+    - path: "./app/Paths_Symphony.hs"
+      component: "Symphony:exe:Symphony-exe"
+
+    - path: "./test"
+      component: "Symphony:test:Symphony-test"

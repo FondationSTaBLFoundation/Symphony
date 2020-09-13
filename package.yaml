@@ -1,0 +1,93 @@
+name:                Symphony
+version:             0.1.0.0
+github:              "githubuser/Symphony"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2020 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/Symphony#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- array
+- mtl
+- HashedExpression
+- regex-posix
+- optparse-applicative
+- JuicyPixels
+- process
+- containers
+- extra
+- utility-ht
+
+build-tools:
+  - alex
+  - happy
+
+
+
+default-extensions:
+  - OverloadedStrings
+  - GADTs
+  - OverloadedStrings
+  - FlexibleContexts
+  - FlexibleInstances
+  - TypeFamilies
+  - TypeApplications
+  - StandaloneDeriving
+  - TypeSynonymInstances
+  - FunctionalDependencies
+  - AllowAmbiguousTypes
+  - RoleAnnotations
+  - UndecidableInstances
+  - ExtendedDefaultRules
+  - MultiParamTypeClasses
+  - TemplateHaskell
+  - QuasiQuotes
+  - ScopedTypeVariables
+  - TupleSections
+  - GeneralisedNewtypeDeriving
+  - DataKinds
+  - InstanceSigs
+  - RecordWildCards
+  - LambdaCase
+  - PolyKinds
+
+library:
+  source-dirs: src
+  exposed-modules:
+    - Symphony.Entry
+
+executables:
+  Symphony-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - Symphony
+
+tests:
+  Symphony-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - Symphony
