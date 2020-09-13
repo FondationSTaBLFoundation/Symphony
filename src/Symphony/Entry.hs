@@ -41,7 +41,6 @@ entry = do
           (fullDesc <> progDesc "Symphony - symbolic computing & code generator for optimization solvers")
   opts <- execParser parserInfo
   symphony opts
-  undefined
 
 symphony :: SymphonyOpts -> IO ()
 symphony (SymphonyOpts filePath noGenCode outputPath) = do
